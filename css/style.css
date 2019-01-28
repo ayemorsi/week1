@@ -9,15 +9,15 @@ a{
 text-decoration: none;
 color: white;
 }
-a:current {
+a:hover {
   background-color: blue;
   border-color: blue;
 }
-/*
+
 a:active {
   background-color: blue;
 }
 
 a:visited {
   background-color: blue;
-} */
+}
