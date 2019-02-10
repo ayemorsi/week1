@@ -5,6 +5,14 @@ nav {
   color: white;
 }
 
+body{
+  margin: 0;
+}
+
+h1{
+  font-family: lato;
+}
+
 a{
 text-decoration: none;
 color: white;
@@ -20,4 +28,31 @@ a:active {
 
 a:visited {
   background-color: blue;
+}
+
+.flex-grid-4th {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.flex-grid-4th .col {
+  width: 24%;
+}
+
+@media (max-width: 400px) {
+  .flex-grid-4th {
+    display: block;
+    .col {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+.box-modal{
+  background-color: lightgrey;
+  width: 300px;
+  border: 25px solid green;
+  padding: 25px;
+  margin: 25px;
 }
