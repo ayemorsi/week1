@@ -67,7 +67,7 @@ a.menu-bar:visited {
 .box-modal{
   background-color: lightgrey;
   width: 300px;
-  border: 25px solid green;
-  padding: 25px;
+  border: 5px solid Black;
+  padding: 5px;
   margin: 25px;
 }
