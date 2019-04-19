@@ -13,30 +13,92 @@
   <body>
     <img src="img/me.png" alt="" style="width: 100px;margin: 0 auto;display: block;margin-left: auto;margin-right: auto;">
     <header>
-      <nav>
-        <a href="index.html" class="menu-bar">Home</a> |
-        <a href="about.html" class="menu-bar">About</a> |
-        <a href="resume.html" class="menu-bar">Resume</a> |
-        <a href="work.html" class="menu-bar">Work</a> |
+      <nav id="navbar">
+        <a href="index.html" class="menu-bar">Home</a>
+        <a href="about.html" class="menu-bar">About</a>
+        <a href="resume.html" class="menu-bar">Resume</a>
+        <a href="work.html" class="menu-bar">Work</a>
+        <a href="schools.html" class="menu-bar">Education</a>
       </nav>
-      <h1>Anas Morsi</h1>
+      <h1><center>Anas Morsi</center></h1>
     </header>
     <h2>UX designer & Front-end Developer</h2>
 
-    <div class="box-modal">
-      <ul style="list-style-type:none;">
-        <li><i class="fa fa-phone-square" aria-hidden="true"> +1 (810) 282-5910 </i></li>
-        <li><i class="fa fa-envelope" aria-hidden="true"> anmorsi@umich.edu </i></li>
-        <li><i class="fa fa-linkedin-square" aria-hidden="true"> LinkedIn </i></li>
-        <li><i class="fa fa-instagram" aria-hidden="true"> Instagram </i></li>
-      </ul>
+
+    <div class="callout">
+      <div class="callout-header">Learn More</div>
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+      <div class="callout-container">
+        <p>Click here to<a href="#"> Learn more </a> about me</p>
+      </div>
     </div>
+
+    <button class="button" id="myBtn"><span>Connect with me!</span></button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="box-modal">
+          <ul style="list-style-type:none;">
+            <li><i class="fa fa-phone-square" aria-hidden="true"> +1 (810) 282-5910 </i></li>
+            <li><i class="fa fa-envelope" aria-hidden="true"> anmorsi@umich.edu </i></li>
+            <li><i class="fa fa-linkedin-square" aria-hidden="true"> LinkedIn </i></li>
+            <li><i class="fa fa-instagram" aria-hidden="true"> Instagram </i></li>
+          </ul>
+        </div>
+      </div>
+
 
     <footer>
       <p>Posted by: Anas Morsi</p>
       <p>Contact information: <a href="mailto:anasmorsi@gmail.com">
       anasmorsi@gmail.com</a>.</p>
     </footer>
+    <script>
+    window.onscroll = function() {myFunction()};
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+
+    </script>
 
   </body>
 </html>

@@ -1,0 +1,129 @@
+@import "compass/css3";
+
+$hexagon_scale: 1.2;
+$images_scale: 0.7;
+$pad-vertical: 5px;
+$pad-horizontal: 5px;
+$border-width: 1px;
+$border-style: solid;
+$border-color: black;
+
+/* Not changes needed from here */
+$hexagon_base_width: 150px;
+$hexagon_width:
+$hexagon_scale*$hexagon_base_width;
+$hexagon_height:
+$hexagon_width/1.73205;
+$hexagon_margin_v:
+$hexagon_scale*21px+$pad-vertical;
+$hexagon_margin_h:
+$pad-horizontal;
+
+.wrap{
+  margin: 140px;
+}
+
+.hex {
+  width:$hexagon_width;
+  height:$hexagon_height;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  @include background-size(auto $hexagon_width*$images_scale);
+  position: relative;
+  float:left;
+  margin-top: $hexagon_margin_v*$hexagon_scale;
+  margin-right: $hexagon_margin_h*$hexagon_scale;
+  margin-bottom: $hexagon_margin_v*$hexagon_scale;
+  margin-left: $hexagon_margin_h*$hexagon_scale;
+  text-align:center;
+  zoom:1;
+  border-right: $border-width $border-style $border-color;
+  border-left: $border-width $border-style $border-color;
+  &.hex-gap {
+    margin-left: $hexagon_height;
+  }
+  &:hover {
+    cursor: pointer;
+    opacity:0.5;
+       @include box-shadow(red 2px 2px 10px);
+  }
+
+
+  .corner-1,
+  .corner-2 {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: inherit;
+    z-index:-2;
+    border-right: $border-width $border-style $border-color;
+  border-left: $border-width $border-style $border-color;
+    overflow:hidden;
+    @include backface-visibility(hidden);
+
+    &:before {
+        width:  $hexagon_scale*173px;  // scale * 100 * sqrt(3)
+        height: $hexagon_scale*173px;  // scale * 100 * sqrt(3)
+        content: '';
+        position: absolute;
+        background: inherit;
+        top:0;
+        left: 0;
+        z-index: 1;
+        background: inherit;
+        background-repeat: no-repeat;
+        @include backface-visibility(hidden);
+    }
+  }
+
+  .corner-1 {
+    z-index:-1;
+    @include transform(rotate(60deg));
+    &:before {
+    @include transform(rotate(-60deg) translate(-$hexagon_height, 0px));
+    @include transform-origin(0,0);
+    }
+  }
+
+  .corner-2 {
+    @include transform(rotate(-60deg));
+    &:before {
+        @include transform(rotate(60deg)
+        translate((-$hexagon_height/2)+0px,
+        (-2-$hexagon_scale*2*$hexagon_margin_h)+0px));
+        bottom: 0;
+    }
+  }
+
+  /* Custom styles*/
+  .inner {
+    color: #333;
+  }
+
+  h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: $hexagon_scale*1.2em;
+    margin:0;
+  }
+
+  hr {
+    width:60%;
+    border:0;
+    border-top:3px solid #eee;
+    margin: $hexagon_scale*10px auto;
+  }
+
+  .text {
+    font-size: $hexagon_scale*1em;
+    font-family: 'Kotta One', serif;
+    width:80%;
+    margin:0 auto;
+  }
+
+  &.hex-1 {
+    background: #74cddb;
+  }
+}

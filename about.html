@@ -7,14 +7,17 @@
 
   <body background="pyramids-gizeh-egypt-snow-landscape-creative.jpg">
     <header>
-      <nav>
-        <a href="index.html" class="menu-bar">Home</a> |
-        <a href="about.html" class="menu-bar">About</a> |
-        <a href="resume.html" class="menu-bar">Resume</a> |
-        <a href="work.html" class="menu-bar">Work</a> |
+      <nav id="navbar">
+        <a href="index.html" class="menu-bar">Home</a>
+        <a href="about.html" class="menu-bar">About</a>
+        <a href="resume.html" class="menu-bar">Resume</a>
+        <a href="work.html" class="menu-bar">Work</a>
+        <a href="schools.html" class="menu-bar">Education</a>
       </nav>
       <h1>About</h1>
     </header>
+
+
     <p>
     My name is Anas Morsi, and I’m a computer science student at Kettering
     University in my junior year. I was born in Flint, MI to Egyptian
@@ -29,55 +32,89 @@
     culture and heritage that has been so close to my heart. Ironically,
     going back to Egypt helped fuel my passion for web development and
     UX design as many of my family members work as engineers and computer
-    engineers.
+    engineers.</p>
+    <button class="accordion">Read More</button>
+    <div class="panel">
+      I started off as student at the University of Michigan-Flint, but
+      I knew that with Kettering just around the corner I would’ve been
+      doing myself a disservice not transferring to their world class
+      computer science program, and so I did just that. I have gained
+      so much out of my experience in my first year, and I am eternally
+      grateful for my co-op and the opportunities presented here at
+      Kettering.
 
-    I started off as student at the University of Michigan-Flint, but
-    I knew that with Kettering just around the corner I would’ve been
-    doing myself a disservice not transferring to their world class
-    computer science program, and so I did just that. I have gained
-    so much out of my experience in my first year, and I am eternally
-    grateful for my co-op and the opportunities presented here at
-    Kettering.
+      After my experience with my start-up as a web developer and user
+      experience designer I found I had a great interest in web development
+      and UX design. I was able through Kettering to find a great co-op and
+      really expand on my skill set. I’ve worked many jobs in my lifetime
+      to pay bills and have money in my pocket, but I finally feel like
+      I’ve started working for something more than money. It seemed only
+      natural to choose a degree which interested me. After completing
+      several web applications for clients, I realized that web development
+      and UX design is the occupation I would like to follow on successful
+      completion of my degree.
 
-    After my experience with my start-up as a web developer and user
-    experience designer I found I had a great interest in web development
-    and UX design. I was able through Kettering to find a great co-op and
-    really expand on my skill set. I’ve worked many jobs in my lifetime
-    to pay bills and have money in my pocket, but I finally feel like
-    I’ve started working for something more than money. It seemed only
-    natural to choose a degree which interested me. After completing
-    several web applications for clients, I realized that web development
-    and UX design is the occupation I would like to follow on successful
-    completion of my degree.
+      My work experience taught me a lot about the computer industry
+      especially the processes that are involved in designing and
+      implementing a website. I also worked on the design and front
+      end development for a very big and well established company
+      and my final product went up live. Being able to work on big
+      name projects while also being a student is a very valuable tool
+      that my university offers, and it has helped me immensely as I
+      progress into a full-time web developer and designer.
 
-    My work experience taught me a lot about the computer industry
-    especially the processes that are involved in designing and
-    implementing a website. I also worked on the design and front
-    end development for a very big and well established company
-    and my final product went up live. Being able to work on big
-    name projects while also being a student is a very valuable tool
-    that my university offers, and it has helped me immensely as I
-    progress into a full-time web developer and designer.
+      Outside of school I enjoy sports, especially soccer and basketball.
+      I also enjoy reading computing publications as I like to keep up to
+      date with new technology. I also enjoy listening to music especially
+      Arabic music, rap, and hip-hop. I also enjoy traveling the world and
+      seeing the mix of cultures; I enjoy experiencing different ways of
+      life and trying not to be a tourist, but trying to speak the local
+      languages and observe their traditions. I think this gives me a
+      better perspective on the countries I visit, and it also opens
+      my mind to different environments and paces of life. My experiences
+      traveling have also shown me different perspectives on where certain
+      parts of the world are from a technological standpoint, which is
+      valuable to my overall understating as to why I am pursuing the
+      career that I am pursuing.
+    </div>
 
-    Outside of school I enjoy sports, especially soccer and basketball.
-    I also enjoy reading computing publications as I like to keep up to
-    date with new technology. I also enjoy listening to music especially
-    Arabic music, rap, and hip-hop. I also enjoy traveling the world and
-    seeing the mix of cultures; I enjoy experiencing different ways of
-    life and trying not to be a tourist, but trying to speak the local
-    languages and observe their traditions. I think this gives me a
-    better perspective on the countries I visit, and it also opens
-    my mind to different environments and paces of life. My experiences
-    traveling have also shown me different perspectives on where certain
-    parts of the world are from a technological standpoint, which is
-    valuable to my overall understating as to why I am pursuing the
-    career that I am pursuing.
-    </p>
+
 
     <footer>
       <p>Posted by: Anas Morsi</p>
       <p>Contact information: <a href="mailto:anasmorsi@gmail.com">
       anasmorsi@gmail.com</a>.</p>
     </footer>
+    <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+
+</script>
   </body>
 </html>
